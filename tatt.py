@@ -62,34 +62,3 @@ def tatt(g):
     dfs(f, 0, visitados, caminho)
     caminho_hamiltoniano = hamiltoniano(caminho, 0)
     return caminho_hamiltoniano
-
-# def main():
-#     g = Graph()
-#     g.add_vertices(5)
-#     g.add_edges([(0, 1), (0, 2), (0, 3), (0, 4), (1, 2), (1, 3), (1,4), (2,3), (2,4), (3,4)])
-#     g.es["weight"] = [4, 8, 9, 12, 6, 8, 9, 10, 11, 7] 
-
-#     # transforma pesos em matriz de adjacência
-#     adj_matrix = [[0] * g.vcount() for _ in range(g.vcount())]
-#     for edge in g.es:
-#         u, v = edge.tuple
-#         adj_matrix[u][v] = adj_matrix[v][u] = edge["weight"]
-
-#     # Converte matriz para igraph e executa Prim
-#     g = Graph.Weighted_Adjacency(adj_matrix, mode=ADJ_UNDIRECTED)
-#     # algoritmo de Prim
-#     f = prim_algorithm(g)
-#     print(f)
-#     # agora queremos encontrar um caminhe que a partir de um vértice inicial percorra todos ps outros e retorne para o inicial
-#     n_vertices = f.vcount()
-#     caminho = []
-#     visitados = [False] * n_vertices
-#     dfs(f, 0, visitados, caminho)
-#     print(caminho)
-
-#     caminho_hamiltoniano = hamiltoniano(caminho, 0)
-#     print(caminho_hamiltoniano)
-
-
-# if __name__ == "__main__":
-#     main()
