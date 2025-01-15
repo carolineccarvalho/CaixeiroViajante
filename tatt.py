@@ -44,15 +44,21 @@ def dfs(f, v, visitados, caminho):
             dfs(f, u, visitados, caminho)
             caminho.append(v)
 
-def hamiltoniano(caminho, inicio):
+def hamiltoniano(caminho, g):
     caminho_hamiltoniano = []
     visitados = set()
-    for v in caminho:
-        if v not in visitados:
-            caminho_hamiltoniano.append(v)
-            visitados.add(v)
-    caminho_hamiltoniano.append(inicio)
-    return caminho_hamiltoniano
+    custo_total = 0
+    for i in range(len(caminho) - 1):
+        u = caminho[i]
+        v = caminho[i + 1]
+        if u not in visitados:
+            caminho_hamiltoniano.append(u)
+            visitados.add(u)
+        eid = g.get_eid(u, v)
+        custo_total += g.es[eid]["weight"]
+
+    caminho_hamiltoniano.append(caminho[0])
+    return caminho_hamiltoniano, custo_total
 
 def tatt(g):
     f = prim_algorithm(g)
@@ -60,5 +66,5 @@ def tatt(g):
     caminho = []
     visitados = [False] * n_vertices
     dfs(f, 0, visitados, caminho)
-    caminho_hamiltoniano = hamiltoniano(caminho, 0)
-    return caminho_hamiltoniano
+    caminho_hamiltoniano, custo_total = hamiltoniano(caminho, g)
+    return caminho_hamiltoniano, custo_total
