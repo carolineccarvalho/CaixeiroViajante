@@ -1,15 +1,4 @@
 <h1 align="center" style="font-weight: bold;">Trabalho Prático 2 de Algoritmos 2</h1>
-<p align="center">
- <a href="#tech">Tecnologias</a> • 
- <a href="#intro">Introdução</a> • 
- <a href="#métodos">Métodos e Implementações</a> •
- <a href="#instrucoes">Instruções de Uso</a> • 
- <a href="#testes">Testes e Análise</a> • 
- <a href="#colab">Responsáveis</a> •
-</p>
-<p align="center">
-    <b></b>
-</p>
 
 <h2 id="tech"> Tecnologias</h2>
 
